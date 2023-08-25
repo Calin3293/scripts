@@ -31,13 +31,28 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "No Particles (WIP, Breaks The Entire Game)",
+	Name = "No Particles",
 	Callback = function()
-      	for i,v in pairs(game.Workspace.LoadedLevels:GetDescendants()) do
-		if v:IsA("Part") and v.Name == "Particals" then
-		v:Destroy();
+	while wait() do
+      	for i,v in pairs(game.Workspace:GetDescendants()) do
+		if v:IsA("ParticleEmitter") then
+		v.Enabled = false;
 		end
 		end
+	end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "No Jump Pad Effect",
+	Callback = function()
+	while wait() do
+		for i,v in pairs(game.Workspace.LoadedLevels:GetDescendants()) do
+		if v:IsA("Decal") and v.Parent.Name == "JumpBright" then
+		v.Texture = 9789474866;
+		end
+		end
+  	end
   	end    
 })
 
