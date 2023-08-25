@@ -226,6 +226,19 @@ Tab:AddBind({
 	end    
 })
 
+Tab:AddBind({
+	Name = "SelectionModeBind",
+	Default = Enum.KeyCode.R,
+	Hold = false,
+	Callback = function()
+		for i,v in pairs(game.Players:GetDescendants()) do
+		if v:IsA("ImageButton") and v.Name == "Selection" then
+		firesignal(v.MouseButton1Click);
+		end
+		end
+	end    
+})
+
 Tab:AddSlider({
 	Name = "FOV",
 	Min = 40,
