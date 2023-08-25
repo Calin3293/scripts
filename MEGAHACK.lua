@@ -161,14 +161,69 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Section = Tab:AddSection({
+	Name = "Object Rotation"
+})
 
 Tab:AddButton({
-	Name = "VerifyHack",
+	Name = "0",
 	Callback = function()
-      	local location = game.Workspace.GameAssets.Cube.CFrame
-		wait(0.1)
-		game.Workspace.LoadedLevels.Level.End.End.Collision.CFrame = location
+		for i,v in pairs(game.Players:GetDescendants()) do
+		if v:IsA("TextBox") and v.Name == "RotationValue" then
+		v.Text = 0;
+		end
+		end
   	end    
+})
+
+Tab:AddButton({
+	Name = "90",
+	Callback = function()
+		for i,v in pairs(game.Players:GetDescendants()) do
+		if v:IsA("TextBox") and v.Name == "RotationValue" then
+		v.Text = 90;
+		end
+		end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "180",
+	Callback = function()
+		for i,v in pairs(game.Players:GetDescendants()) do
+		if v:IsA("TextBox") and v.Name == "RotationValue" then
+		v.Text = 180;
+		end
+		end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "-90",
+	Callback = function()
+		for i,v in pairs(game.Players:GetDescendants()) do
+		if v:IsA("TextBox") and v.Name == "RotationValue" then
+		v.Text = -90;
+		end
+		end
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Quality of life"
+})
+
+Tab:AddBind({
+	Name = "QuickDeleteBind",
+	Default = Enum.KeyCode.T,
+	Hold = false,
+	Callback = function()
+		for i,v in pairs(game.Players:GetDescendants()) do
+		if v:IsA("ImageButton") and v.Name == "Delete" then
+		firesignal(v.MouseButton1Click);
+		end
+		end
+	end    
 })
 
 Tab:AddSlider({
@@ -182,6 +237,19 @@ Tab:AddSlider({
 	Callback = function(Value)
 		game.Workspace.Camera.FieldOfView = Value
 	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Other"
+})
+
+Tab:AddButton({
+	Name = "VerifyHack",
+	Callback = function()
+      	local location = game.Workspace.GameAssets.Cube.CFrame
+		wait(0.1)
+		game.Workspace.LoadedLevels.Level.End.End.Collision.CFrame = location
+  	end    
 })
 
 Tab:AddButton({
