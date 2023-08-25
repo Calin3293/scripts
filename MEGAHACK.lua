@@ -162,55 +162,59 @@ local Tab = Window:MakeTab({
 })
 
 local Section = Tab:AddSection({
-	Name = "Object Rotation"
+	Name = "Quality of life"
 })
 
-Tab:AddButton({
-	Name = "0",
-	Callback = function()
-		for i,v in pairs(game.Players:GetDescendants()) do
-		if v:IsA("TextBox") and v.Name == "RotationValue" then
-		v.Text = 0;
-		end
-		end
-  	end    
-})
-
-Tab:AddButton({
-	Name = "90",
-	Callback = function()
-		for i,v in pairs(game.Players:GetDescendants()) do
-		if v:IsA("TextBox") and v.Name == "RotationValue" then
-		v.Text = 90;
-		end
-		end
-  	end    
-})
-
-Tab:AddButton({
-	Name = "180",
-	Callback = function()
-		for i,v in pairs(game.Players:GetDescendants()) do
-		if v:IsA("TextBox") and v.Name == "RotationValue" then
-		v.Text = 180;
-		end
-		end
-  	end    
-})
-
-Tab:AddButton({
-	Name = "-90",
+Tab:AddBind({
+	Name = "Rotation -90°",
+	Default = Enum.KeyCode.1,
+	Hold = false,
 	Callback = function()
 		for i,v in pairs(game.Players:GetDescendants()) do
 		if v:IsA("TextBox") and v.Name == "RotationValue" then
 		v.Text = -90;
 		end
 		end
-  	end    
+	end    
 })
 
-local Section = Tab:AddSection({
-	Name = "Quality of life"
+Tab:AddBind({
+	Name = "Rotation 0°",
+	Default = Enum.KeyCode.2,
+	Hold = false,
+	Callback = function()
+		for i,v in pairs(game.Players:GetDescendants()) do
+		if v:IsA("TextBox") and v.Name == "RotationValue" then
+		v.Text = 0;
+		end
+		end
+	end    
+})
+
+Tab:AddBind({
+	Name = "Rotation 90°",
+	Default = Enum.KeyCode.3,
+	Hold = false,
+	Callback = function()
+		for i,v in pairs(game.Players:GetDescendants()) do
+		if v:IsA("TextBox") and v.Name == "RotationValue" then
+		v.Text = 90;
+		end
+		end
+	end    
+})
+
+Tab:AddBind({
+	Name = "Rotation 180°",
+	Default = Enum.KeyCode.4,
+	Hold = false,
+	Callback = function()
+		for i,v in pairs(game.Players:GetDescendants()) do
+		if v:IsA("TextBox") and v.Name == "RotationValue" then
+		v.Text = 180;
+		end
+		end
+	end    
 })
 
 Tab:AddBind({
