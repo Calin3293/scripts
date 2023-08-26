@@ -167,7 +167,7 @@ local Section = Tab:AddSection({
 
 Tab:AddBind({
 	Name = "Rotation -90°",
-	Default = Enum.KeyCode.1,
+	Default = Enum.KeyCode.z,
 	Hold = false,
 	Callback = function()
 		for i,v in pairs(game.Players:GetDescendants()) do
@@ -180,7 +180,7 @@ Tab:AddBind({
 
 Tab:AddBind({
 	Name = "Rotation 0°",
-	Default = Enum.KeyCode.2,
+	Default = Enum.KeyCode.x,
 	Hold = false,
 	Callback = function()
 		for i,v in pairs(game.Players:GetDescendants()) do
@@ -193,7 +193,7 @@ Tab:AddBind({
 
 Tab:AddBind({
 	Name = "Rotation 90°",
-	Default = Enum.KeyCode.3,
+	Default = Enum.KeyCode.c,
 	Hold = false,
 	Callback = function()
 		for i,v in pairs(game.Players:GetDescendants()) do
@@ -206,7 +206,7 @@ Tab:AddBind({
 
 Tab:AddBind({
 	Name = "Rotation 180°",
-	Default = Enum.KeyCode.4,
+	Default = Enum.KeyCode.v,
 	Hold = false,
 	Callback = function()
 		for i,v in pairs(game.Players:GetDescendants()) do
